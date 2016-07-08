@@ -90,5 +90,5 @@ init_drawman()
 if __name__ == '__main__':
     import time
     pen_down()
-    draw_grid(3,10)
-    time.sleep(10)
+    draw_grid(10,5)
+    time.sleep(20)
