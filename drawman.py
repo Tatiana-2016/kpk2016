@@ -37,51 +37,50 @@ def to_point(x, y):
     t.goto(_drawman_scale*x_current, _drawman_scale*y_current)
 
 
-def draw_grid(_grid,_drawman_scale):
-    """grid - задаваемая размерность сетки
-    _drawman_scale - задаваемый масштаб
+def draw_grid(_setka,mashtab):
+    """setka - задаваемая размерность сетки
+        mashtab - задаваемый масштаб
     """
-    #drawman_scale(_drawman_scale)
     pen_up()
-    grid=_drawman_scale*_grid
-    to_point(-grid,grid)
+    setka=mashtab*_setka
+    to_point(-setka,setka)
     pen_down()
     drawman_color("grey")
     x=0
     """Горизонтальная сетка
     """
-    while x<=grid*2:
-        on_vector(2*grid,0)
+    while x<=setka*2:
+        on_vector(2*setka,0)
         pen_up()
-        on_vector(-2*grid,-_drawman_scale)
+        on_vector(-2*setka,-mashtab)
         pen_down()
-        x+=_drawman_scale
+        x+=mashtab
     pen_up()
-    to_point(-grid,grid)
+    to_point(-setka,setka)
     pen_down()
     y=0
     """Вертикальная сетка
     """
-    while y<=grid*2:
-        on_vector(0,-2*grid)
+    while y<=setka*2:
+        on_vector(0,-2*setka)
         pen_up()
-        on_vector(_drawman_scale,2*grid)
+        on_vector(mashtab,2*setka)
         pen_down()
-        y+=_drawman_scale
+        y+=mashtab
     pen_up()
     """Рисуем ось х
     """
     drawman_color("black")
-    to_point(-grid,0)
+    to_point(-setka,0)
     pen_down()
-    to_point(grid,0)
+    to_point(setka,0)
     pen_up()
     """Рисуем ось у
     """
     t.left(90)
-    to_point(0,-grid)
+    to_point(0,-setka)
     pen_down()
-    to_point(0,grid)
+    to_point(0,setka)
     pen_up()
     """Переходим в начало координат
     """
