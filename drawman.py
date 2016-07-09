@@ -73,17 +73,27 @@ def draw_grid(_setka,mashtab):
     drawman_color("black")
     to_point(-setka,0)
     pen_down()
-    to_point(setka,0)
+    for i in range(-_setka,_setka+1):
+        t.write(i)# подписываем ось х
+        on_vector(mashtab,0)
+    to_point(setka+mashtab,0)
+    init_drawman()
     pen_up()
     """Рисуем ось у
     """
-    t.left(90)
     to_point(0,-setka)
     pen_down()
-    to_point(0,setka)
+    for i in range(-_setka,_setka+1):
+        t.write(i)#подписываем ось у
+        on_vector(0,mashtab)
+    to_point(0,setka+mashtab)
+    t.left(90)
+    init_drawman()
+
     pen_up()
     """Переходим в начало координат
     """
+    drawman_color("red")
     to_point(0,0)
 
 
@@ -91,5 +101,5 @@ init_drawman()
 if __name__ == '__main__':
     import time
     pen_down()
-    draw_grid(10,20)
+    draw_grid(10,30)
     time.sleep(20)
