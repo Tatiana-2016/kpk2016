@@ -86,6 +86,7 @@ def draw_grid(_setka,mashtab):
     """
     to_point(0,0)
 
+
 init_drawman()
 if __name__ == '__main__':
     import time
