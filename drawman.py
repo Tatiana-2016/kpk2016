@@ -1,5 +1,5 @@
 from turtle import Turtle
-default_scale = 3
+default_scale = 1
 
 def init_drawman():
     global t, x_current, y_current, _drawman_scale
@@ -9,6 +9,7 @@ def init_drawman():
     y_current = 0
     t.goto(x_current, y_current)
     drawman_scale(default_scale)
+    t.speed(30)
 
 def drawman_color(color):
     t.color(color)
@@ -40,7 +41,7 @@ def draw_grid(_grid,_drawman_scale):
     """grid - задаваемая размерность сетки
     _drawman_scale - задаваемый масштаб
     """
-    drawman_scale(_drawman_scale)
+    #drawman_scale(_drawman_scale)
     pen_up()
     grid=_drawman_scale*_grid
     to_point(-grid,grid)
@@ -90,5 +91,5 @@ init_drawman()
 if __name__ == '__main__':
     import time
     pen_down()
-    draw_grid(10,5)
+    draw_grid(10,20)
     time.sleep(20)
