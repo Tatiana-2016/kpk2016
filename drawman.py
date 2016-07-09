@@ -39,7 +39,7 @@ def to_point(x, y):
 
 def draw_grid(_setka,mashtab):
     """setka - задаваемая размерность сетки
-        mashtab - задаваемый масштаб
+    mashtab - задаваемый масштаб
     """
     pen_up()
     setka=mashtab*_setka
